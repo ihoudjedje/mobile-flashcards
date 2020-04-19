@@ -1,11 +1,15 @@
-import React, { Component } from "react";
-import { Text } from "react-native";
+import React from "react";
+import * as eva from "@eva-design/eva";
+import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
 
-class App extends Component {
-  state = {};
-  render() {
-    return <Text style={{ padding: 10 }}>Hello World</Text>;
-  }
-}
+const HomeScreen = () => (
+  <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text category="h1">HOME</Text>
+  </Layout>
+);
 
-export default App;
+export default () => (
+  <ApplicationProvider {...eva} theme={eva.light}>
+    <HomeScreen />
+  </ApplicationProvider>
+);

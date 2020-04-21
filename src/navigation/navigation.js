@@ -4,8 +4,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
 
+import Deck from "../views/Deck";
 import Decks from "../views/Decks";
 import NewDeck from "../views/NewDeck";
+import Quiz from "../views/Quiz";
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
@@ -26,8 +28,13 @@ const navigationOptions = () => ({
 
 const DecksStack = () => (
   <Stack.Navigator initialRouteName="Decks">
-    <Stack.Screen name="Decks" component={Decks} options={navigationOptions} />
-    {/* <Stack.Screen name="Deck" component={Deck} options={navigationOptions} /> */}
+    <Stack.Screen
+      name="TabNavigator"
+      component={TabNavigator}
+      options={navOptions}
+    />
+    <Stack.Screen name="Deck" component={Deck} />
+    <Stack.Screen name="Quiz" component={Quiz} />
   </Stack.Navigator>
 );
 

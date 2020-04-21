@@ -8,6 +8,7 @@ import Deck from "../views/Deck";
 import Decks from "../views/Decks";
 import NewDeck from "../views/NewDeck";
 import Quiz from "../views/Quiz";
+import NewCard from "../views/NewCard";
 
 const BottomTabBar = ({ navigation, state }) => (
   <BottomNavigation
@@ -35,6 +36,7 @@ const DecksStack = () => (
     />
     <Stack.Screen name="Deck" component={Deck} />
     <Stack.Screen name="Quiz" component={Quiz} />
+    <Stack.Screen name="NewCard" component={NewCard} />
   </Stack.Navigator>
 );
 

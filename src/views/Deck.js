@@ -9,10 +9,18 @@ class Deck extends Component {
     const { deck } = this.props.route.params;
     const totalQuestionsNbr = deck.questions.length;
 
+    // goToNewCard = () => {
+    //   this.props.navigation.navigate("NewCard");
+    // };
+
     return (
       <Layout level="1">
         <DeckItem deck={deck} doNavigate={false} />
-        <Button style={styles.button} status="info">
+        <Button
+          style={styles.button}
+          status="info"
+          onPress={() => this.props.navigation.navigate("NewCard", { deck })}
+        >
           ADD CARD
         </Button>
         <Button

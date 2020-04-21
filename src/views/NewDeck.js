@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import {
-  Divider,
-  TopNavigation,
-  Layout,
-  Text,
-  Input,
-  Icon,
-  Button,
-} from "@ui-kitten/components";
+import { Layout, Text, Input, Icon, Button } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import { addDeck } from "../actions";
 import { saveDeckTitleToDB } from "../utils/api";

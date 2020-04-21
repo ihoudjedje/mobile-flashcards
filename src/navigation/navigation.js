@@ -22,7 +22,7 @@ const BottomTabBar = ({ navigation, state }) => (
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const navigationOptions = () => ({
+const navOptions = () => ({
   headerShown: false,
 });
 
@@ -40,21 +40,13 @@ const DecksStack = () => (
 
 const TabNavigator = () => (
   <Tab.Navigator tabBar={(props) => <BottomTabBar {...props} />}>
-    <Tab.Screen
-      name="Decks Stack"
-      component={DecksStack}
-      options={navigationOptions}
-    />
-    <Tab.Screen
-      name="New Deck"
-      component={NewDeck}
-      options={navigationOptions}
-    />
+    <Tab.Screen name="Decks" component={Decks} options={navOptions} />
+    <Tab.Screen name="New Deck" component={NewDeck} options={navOptions} />
   </Tab.Navigator>
 );
 
 export const AppNavigator = () => (
   <NavigationContainer>
-    <TabNavigator />
+    <DecksStack />
   </NavigationContainer>
 );

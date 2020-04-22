@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { Layout, Text, Button, Card } from "@ui-kitten/components";
 import { StyleSheet, View } from "react-native";
+import { clearLocalNotification, setLocalNotification } from "../utils/helpers";
 
 class Quiz extends Component {
   state = { qIdx: 0, showAnswer: false, correctAnswers: 0, wrongAnswers: 0 };
+
+  componentDidMount() {
+    clearLocalNotification().then(setLocalNotification);
+  }
 
   onShowAnswer = () => {
     this.setState({ showAnswer: true });

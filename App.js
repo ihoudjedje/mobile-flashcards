@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./src/reducers";
 import middleware from "./src/middleware";
+import { setLocalNotification } from "./src/utils/helpers";
 
 import { getDecks } from "./src/actions";
 import { fetchDecksDB } from "./src/utils/api";
@@ -18,6 +19,7 @@ class App extends React.Component {
     const { dispatch } = this.store;
 
     fetchDecksDB().then((decks) => dispatch(getDecks(decks)));
+    setLocalNotification();
   }
 
   render() {

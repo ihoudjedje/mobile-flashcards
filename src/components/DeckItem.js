@@ -5,7 +5,9 @@ import { StyleSheet } from "react-native";
 function DeckItem({ deck, navigation, doNavigate }) {
   return (
     <Card
-      onPress={() => doNavigate && navigation.navigate("Deck", { deck })}
+      onPress={() =>
+        doNavigate && navigation.navigate("Deck", { title: deck.title })
+      }
       style={styles.card}
     >
       <Text style={{ textAlign: "center", fontWeight: "bold" }} category="h5">

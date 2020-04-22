@@ -17,9 +17,9 @@ class NewCard extends Component {
     const { addCard, goBack } = this.props;
     const { deck } = this.props.route.params;
     const { question, answer } = this.state;
-    // saveDeckTitleToDB(titleText).then(() => saveDeckTitle(titleText));
+
     addCard({ title: deck.title, card: { question, answer } });
-    goBack();
+    goBack(deck.title);
     this.setState({ question: "", answer: "" });
   };
 
@@ -76,16 +76,15 @@ const styles = StyleSheet.create({
 function mapDispatchToProps(dispatch, { navigation }) {
   return {
     addCard: ({ title, card }) => {
-      addCardToDeckDB({ title, card }).then(() => {
-        dispatch(
-          addCardToDeck({
-            title,
-            card,
-          })
-        );
-      });
+      addCardToDeckDB(title, card);
+      dispatch(
+        addCardToDeck({
+          title,
+          card,
+        })
+      );
     },
-    goBack: () => navigation.goBack(),
+    goBack: (title) => navigation.navigate("Deck", { title }),
   };
 }
 

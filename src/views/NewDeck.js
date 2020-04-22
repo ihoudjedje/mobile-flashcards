@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { Layout, Text, Input, Icon, Button } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import { addDeck } from "../actions";
+import { addDeckToDB } from "../utils/api";
 
 const StarIcon = (props) => <Icon {...props} name="paper-plane" />;
 
@@ -56,11 +57,11 @@ class Decks extends Component {
 }
 
 function mapDispatchToProps(dispatch, { navigation }) {
+  const timestamp = new Date().valueOf();
+  const created = new Date().toISOString().split("T")[0];
+
   return {
     addDeck: (titleText) => {
-      const timestamp = new Date().valueOf();
-      const created = new Date().toISOString().split("T")[0];
-
       dispatch(
         addDeck({
           title: titleText,
@@ -70,7 +71,15 @@ function mapDispatchToProps(dispatch, { navigation }) {
         })
       );
     },
-    goToDecks: () => navigation.navigate("Decks"),
+    addDeckToDB: (titleText) => {
+      addDeckToDB({
+        title: titleText,
+        timestamp,
+        created,
+        questions: [],
+      });
+    },
+    goToDeck: (titleText) => navigation.navigate("Deck", { title: titleText }),
   };
 }
 

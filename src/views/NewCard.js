@@ -53,6 +53,7 @@ class NewCard extends Component {
             status="success"
             accessoryRight={AddIcon}
             onPress={this.onSubmit}
+            disabled={question === "" || answer === ""}
           >
             ADD
           </Button>

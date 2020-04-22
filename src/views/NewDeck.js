@@ -47,6 +47,7 @@ class Decks extends Component {
             status="success"
             accessoryRight={StarIcon}
             onPress={this.onSubmit}
+            disabled={titleText === ""}
           >
             SUBMIT
           </Button>

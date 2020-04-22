@@ -3,7 +3,6 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { Layout, Text, Input, Icon, Button } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import { addDeck } from "../actions";
-import { saveDeckTitleToDB } from "../utils/api";
 
 const StarIcon = (props) => <Icon {...props} name="paper-plane" />;
 
@@ -14,12 +13,12 @@ class Decks extends Component {
 
   onSubmit = () => {
     const { titleText } = this.state;
-    const { addDeck, goToDecks } = this.props;
+    const { addDeck, goToDeck, addDeckToDB } = this.props;
 
-    // saveDeckTitleToDB(titleText).then(() => saveDeckTitle(titleText));
+    addDeckToDB(titleText);
     addDeck(titleText);
-    goToDecks();
     this.setState({ titleText: "" });
+    goToDeck(titleText);
   };
 
   render() {

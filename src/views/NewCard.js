@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { Text, Layout, Input, Button } from "@ui-kitten/components";
+import { Text, Layout, Input, Button, Icon } from "@ui-kitten/components";
+import { connect } from "react-redux";
+import { addCardToDeck } from "../actions";
+import { addCardToDeckDB } from "../utils/api";
+
+const AddIcon = (props) => <Icon {...props} name="plus-circle-outline" />;
 
 class NewCard extends Component {
   state = {
-    cardQuestion: "",
-    cardAnswer: "",
+    question: "",
+    answer: "",
   };
+
+  onSubmit = () => {
+    const { addCard, goBack } = this.props;
+    const { deck } = this.props.route.params;
+    const { question, answer } = this.state;
+    // saveDeckTitleToDB(titleText).then(() => saveDeckTitle(titleText));
+    addCard({ title: deck.title, card: { question, answer } });
+    goBack();
+    this.setState({ question: "", answer: "" });
+  };
+
   render() {
     const { deck } = this.props.route.params;
-    const { cardQuestion, cardAnswer } = this.state;
+    const { question, answer } = this.state;
 
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -22,23 +38,23 @@ class NewCard extends Component {
           </Text>
           <Input
             placeholder="Question..."
-            value={cardQuestion}
-            onChangeText={(value) => this.setState({ cardQuestion: value })}
+            value={question}
+            onChangeText={(value) => this.setState({ question: value })}
             style={styles.input}
           />
           <Input
             placeholder="Answer..."
-            value={cardAnswer}
-            onChangeText={(value) => this.setState({ cardAnswer: value })}
+            value={answer}
+            onChangeText={(value) => this.setState({ answer: value })}
             style={styles.input}
           />
           <Button
             style={styles.button}
             status="success"
-            // accessoryRight={StarIcon}
+            accessoryRight={AddIcon}
             onPress={this.onSubmit}
           >
-            SUBMIT
+            ADD
           </Button>
         </Layout>
       </SafeAreaView>
@@ -57,4 +73,20 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewCard;
+function mapDispatchToProps(dispatch, { navigation }) {
+  return {
+    addCard: ({ title, card }) => {
+      addCardToDeckDB({ title, card }).then(() => {
+        dispatch(
+          addCardToDeck({
+            title,
+            card,
+          })
+        );
+      });
+    },
+    goBack: () => navigation.goBack(),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(NewCard);

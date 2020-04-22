@@ -1,24 +1,35 @@
 import React from "react";
-import { Card, Text } from "@ui-kitten/components";
+import { Card, Text, Divider } from "@ui-kitten/components";
 import { StyleSheet } from "react-native";
 
 function DeckItem({ deck, navigation, doNavigate }) {
   return (
     <Card
-      style={styles.card}
       onPress={() => doNavigate && navigation.navigate("Deck", { deck })}
+      style={styles.card}
     >
-      <Text category="h4">{deck.title}</Text>
-      <Text category="h6">{deck.questions.length} flashcards</Text>
-      <Text category="s1">Created: {deck.created}</Text>
+      <Text style={{ textAlign: "center", fontWeight: "bold" }} category="h5">
+        {deck.title}
+        {"\n"}
+      </Text>
+      <Divider />
+      <Text style={{ textAlign: "center" }} category="h6">
+        {deck.questions.length} flashcards
+      </Text>
+      <Divider />
+      <Text style={{ textAlign: "center" }} category="s1">
+        {"\n"}Created: {deck.created}
+      </Text>
     </Card>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    margin: 2,
-    backgroundColor: "red",
+    justifyContent: "center",
+    borderRadius: 20,
+    height: 180,
+    alignItems: "center",
   },
 });
 

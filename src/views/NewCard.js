@@ -19,7 +19,7 @@ class NewCard extends Component {
     const { question, answer } = this.state;
 
     addCard({ title: deck.title, card: { question, answer } });
-    goBack(deck.title);
+    goBack();
     this.setState({ question: "", answer: "" });
   };
 
@@ -84,7 +84,7 @@ function mapDispatchToProps(dispatch, { navigation }) {
         })
       );
     },
-    goBack: (title) => navigation.navigate("Deck", { title }),
+    goBack: () => navigation.goBack(),
   };
 }
 

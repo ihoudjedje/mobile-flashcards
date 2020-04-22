@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import reducer from "./src/reducers";
 import middleware from "./src/middleware";
 import { setLocalNotification } from "./src/utils/helpers";
-
 import { getDecks } from "./src/actions";
 import { fetchDecksDB } from "./src/utils/api";
 

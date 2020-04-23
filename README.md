@@ -1,40 +1,35 @@
 # Mobile Flashcards Project
 
 Udacity's React Nanodegree 3rd Project - Mobile Flashcards
+Better memorize and prepare for your exams with categorized flashcards.
 
-This project was bootstrapped with [Create React Native App](https://github.com/facebook/create-react-native-app).
+## Getting Started
 
-## TL;DR
+- Clone the repo
+- `yarn install` or `npm install` - Install dependencies
+- Start emulator or connect a physical device
+- `yarn start` or `npm start` - Launch the local server, Open [debugger-ui](http://localhost:8081/debugger-ui/) to view it in the browser
+- `yarn android/ios` or `npm run android/ios` - Launch the app
 
-`yarn start` then `yarn android` or `yarn ios`
+## Local testing
 
-## Available Scripts
+The app has been tested on `Android` emulator and device ONLY
 
-In the project directory, you can run:
+## Built With
 
-### `yarn install`
+- [React Native](https://www.github.com/facebook/react-native) - A framework for building native apps with React.
+- [Redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps
+- [Expo](https://www.github.com/expo/expo) - An open-source platform for making universal native apps with React.
+- [Kitten UI](https://akveo.github.io/react-native-ui-kitten/) - Design system based UI library
 
-Install all project dependancies
+## Authors
 
-### `yarn start`
+- **Ilyes Houdjedje** - [IlyeSudo](https://ilyesudo.github.io)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:8081/debugger-ui/](http://localhost:8081/debugger-ui/) to view it in the browser.
+## License
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### `yarn test`
+## Acknowledgments
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Hat tip to [Mr.Tyler McGinnis](https://twitter.com/tylermcginn)

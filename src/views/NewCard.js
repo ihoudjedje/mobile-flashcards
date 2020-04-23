@@ -19,8 +19,8 @@ class NewCard extends Component {
     const { question, answer } = this.state;
 
     addCard({ title: deck.title, card: { question, answer } });
-    goBack();
     this.setState({ question: "", answer: "" });
+    goBack();
   };
 
   render() {

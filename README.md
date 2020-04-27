@@ -1,7 +1,10 @@
-# Mobile Flashcards Project: [Udacity's React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019) 3rd Project
+# Mobile Flashcards
+
+[Udacity's React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019) 3rd Project
 
 | Content                             |
 | :---------------------------------- |
+| [Screenshots](#screenshots)         |
 | [App Experience](#app-experience)   |
 | [Getting Started](#getting-started) |
 | [Local Testing](#local-testing)     |
@@ -11,6 +14,10 @@
 | [Author](#author)                   |
 | [Acknowledgments](#acknowledgments) |
 | [License](#license)                 |
+
+## Screenshots
+
+![alt text](https://github.com/ilyeSudo/MobileFlashcards/blob/master/screenshots/all_views.png?raw=true)
 
 ## App Experience
 

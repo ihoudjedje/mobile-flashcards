@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { SafeAreaView, View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import { Spinner, Layout } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import DeckItem from "../components/DeckItem";
+import HomeHeader from "../components/HomeHeader";
 
 class Decks extends Component {
   state = {};
@@ -11,7 +12,8 @@ class Decks extends Component {
     const { decksSorted, emptyData, navigation } = this.props;
 
     return (
-      <SafeAreaView style={styles.mainContainer}>
+      <Layout style={styles.mainContainer}>
+        <HomeHeader />
         {emptyData ? (
           <Layout style={styles.emptyDataView}>
             <Spinner size="giant" />
@@ -34,7 +36,7 @@ class Decks extends Component {
             />
           </View>
         )}
-      </SafeAreaView>
+      </Layout>
     );
   }
 }

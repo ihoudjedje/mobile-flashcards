@@ -1,25 +1,46 @@
-# Mobile Flashcards
+<p align="center">
+  <a href="https://github.com/ilyeSudo/mobile-flashcards">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-[Udacity's React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019) 3rd Project
+  <h3 align="center">Mobile Flashcards</h3>
 
-| Content                             |
-| :---------------------------------- |
-| [Screenshots](#screenshots)         |
-| [App Experience](#app-experience)   |
-| [Getting Started](#getting-started) |
-| [Local Testing](#local-testing)     |
-| [Built With](#built-with)           |
-| [App Features](#app-features)       |
-| [Tech Stack](#tech-stack)           |
-| [Author](#author)                   |
-| [Acknowledgments](#acknowledgments) |
-| [License](#license)                 |
+  <p align="center">
+    The funny way to prepare for tests and exams!
+    <br />
+    Udacity's <a href="https://www.udacity.com/course/react-nanodegree--nd019">React Nanodegree</a> 3rd Project
+    <br />
+    <br />
+    <a href="https://github.com/ilyeSudo/mobile-flashcards/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ilyeSudo/mobile-flashcards/issues">Request Feature</a>
+  </p>
+</p>
 
-## Screenshots
+## Table of Contents
 
-![alt text](https://github.com/ilyeSudo/MobileFlashcards/blob/master/screenshots/all_views.png?raw=true)
+- [About the Project](#about-the-project)
+  - [Screenshots](#screenshots)
+  - [User Experience](#user-experience)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Local Testing](#local-testing)
+- [App Features](#app-features)
+- [Data](#data)
+- [Author](#author)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-## App Experience
+## About The Project
+
+### Screenshots
+
+![alt text](https://github.com/ilyeSudo/mobile-flashcards/blob/master/images/all_views.png?raw=true)
+
+### User Experience
 
 Mobile Flashcards is an app that helps you study. For each subject or category you are studying, you create a deck. Each deck (category) will contain questions (cards) you want to asnwer.
 
@@ -29,13 +50,56 @@ Once you have a deck with cards, you can start a quiz to test your knowledge. As
 
 Happy Studying ;)
 
+### Built With
+
+- [React Native](https://www.github.com/facebook/react-native) - A framework for building native apps with React.
+- [Redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps
+- [Expo](https://www.github.com/expo/expo) - An open-source platform for making universal native apps with React.
+- [Kitten UI/Eva Design](https://akveo.github.io/react-native-ui-kitten/) - Design system based UI library
+
 ## Getting Started
 
-- Clone the repo
-- `yarn install` or `npm install` - Install dependencies
-- Start emulator or connect a physical device
-- `yarn start` or `npm start` - Launch the local server, Open [debugger-ui](http://localhost:8081/debugger-ui/) to view it in the browser
-- `yarn android/ios` or `npm run android/ios` - Launch the app
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- `yarn` or `npm`, I highly recommand the former!
+
+```sh
+sudo apt update && sudo apt install yarn
+```
+
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Clone the repo
+
+```sh
+> git clone https://github.com/ilyeSudo/mobile-flashcards.git
+```
+
+2. Install project packages
+
+```sh
+> yarn install OR npm install
+```
+
+3. Start the emulator or connect a physical device and check with `adb devices` command
+
+4. Launch the local server, Open [debugger-ui](http://localhost:8081/debugger-ui/) to view it in the browser
+
+```sh
+> yarn start OR npm install
+```
+
+5. Launch the app on simulator or a connected device
+
+```sh
+> yarn android/ios OR npm run android/ios
+```
 
 ## Local Testing
 
@@ -43,13 +107,6 @@ Happy Studying ;)
 | :------: | :----------------: | :----------------------: |
 | Android  | :heavy_check_mark: |    :heavy_check_mark:    |
 |   iOS    | :heavy_check_mark: | :heavy_multiplication_x: |
-
-## Built With
-
-- [React Native](https://www.github.com/facebook/react-native) - A framework for building native apps with React.
-- [Redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps
-- [Expo](https://www.github.com/expo/expo) - An open-source platform for making universal native apps with React.
-- [Kitten UI](https://akveo.github.io/react-native-ui-kitten/) - Design system based UI library
 
 ## App Features
 
@@ -61,7 +118,7 @@ Happy Studying ;)
 
 - **Notifications**: User receives a local notification at 9pm if they haven't opened the app that day.
 
-## Tech Stack
+## Data
 
 This is a React Native app and as such the project was started using [`create-react-native-app`](https://github.com/expo/create-react-native-app). The code base is rather straight forward and a standard React component model is used. [`Redux`](https://redux.js.org/) is used for state management and React Native [`AsyncStorage`](https://reactnative.dev/docs/asyncstorage) is used for persistence. The data structure used relies on a deck_title_id being generated for each deck, and the data for each deck being stored accordingly:
 
@@ -90,9 +147,9 @@ This application could certainly be enhanced (such as enabling deletion support 
 
 ## Author
 
-- **Ilyes Houdjedje** - [IlyeSudo](https://ilyesudo.github.io)
+- **Ilyes Houdjedje** - [Linkedin](https://www.linkedin.com/in/ilyes-houdjedje) - [Github](https://github.com/ilyeSudo) - [Twitter](https://twitter.com/ilyesudo)
 
-## Acknowledgments
+## Acknowledgement
 
 - Hat tip to [Mr.Tyler McGinnis](https://twitter.com/tylermcginn) for the great course and to all the Udacity team!
 
